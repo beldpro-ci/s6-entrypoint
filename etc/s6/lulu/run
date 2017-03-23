@@ -1,0 +1,8 @@
+#!/bin/sh
+
+mkdir -p /var/log
+echo "Spawning lulu"
+
+exec /etc/bin/my-binary \
+  >>/var/log/lulu 2>&1
+

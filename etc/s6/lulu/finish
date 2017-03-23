@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo "Oops, lulu died. Check logs at /var/log/lulu"

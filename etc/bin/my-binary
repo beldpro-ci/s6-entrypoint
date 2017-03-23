@@ -1,0 +1,6 @@
+#!/bin/sh
+
+for i in `seq 1 10000`; do
+  echo "$i\t `date +%s`"
+  sleep 1
+done

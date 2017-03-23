@@ -1,0 +1,8 @@
+#!/bin/sh
+
+mkdir -p /var/log
+echo "Spawning lala"
+
+exec /etc/bin/my-binary \
+  >>/var/log/lala 2>&1
+
