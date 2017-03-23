@@ -1,8 +1,22 @@
 #!/bin/sh
 
+# Make sure the the base logging directory exists
 mkdir -p /var/log
+
+# Just print on `stdout` that we're starting the 
+# LULU service. Otherwise we'd see nothing at 
+# `docker logs` as all would be redirected to the
+# log file. This also makes easy for us to know if
+# there's malfunctioning going on as we can see 
+# many "Spawing lulu" appearing - due to restarts.
 echo "Spawning lulu"
 
+# Execute the binary but with all of its output going
+# to a log file.
+# >>/var/log/lulu  ==> send the stdout to a file openned
+#                      as APPEND.
+# 2>&1             ==> redirect stderr to whatever stdout
+#                      is directed to
 exec /etc/bin/my-binary \
   >>/var/log/lulu 2>&1
 

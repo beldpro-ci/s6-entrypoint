@@ -1,3 +1,6 @@
 #!/bin/sh
 
+# Just acknowledge the `stdout` (`docker logs`, not the
+# /var/log/<service>  file) that the service stopped
+# for some reason - maybe the process died.
 echo "Oops, lala died. Check logs at /var/log/lala"
